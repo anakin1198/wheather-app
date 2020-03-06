@@ -1,7 +1,9 @@
 import transformForecast from './../services/transformForecast';
+import transformWeather from '../services/transformWeather';
 
 export const SET_CITY = 'SET_CITY';
 export const SET_FORECAST_DATA = 'SET_FORECAST_DATA';
+export const SET_WEATHER = 'SET_WEATHER';
 
 const setCity = payload => ({type: SET_CITY, payload});
 const setForecastData = payload => ({type: SET_FORECAST_DATA, payload});
@@ -30,4 +32,22 @@ export const setSelectedCity = payload => {
             }
         );
     };
+};
+
+export const setWeather = payload => {
+
+    /*
+    const api_key = "81b9faea3ab90eb33b220759772e2beb";
+    const url = "https://api.openweathermap.org/data/2.5/weather";
+    componentWillMount(){
+        const {city} = this.state;
+        const api_weather = `${url}?q=${payload}&appid=${api_key}`;
+        fetch(api_weather).then( data => {
+            return data.json();
+        }).then(weather_data => {
+            const data = transformWeather(weather_data);
+            this.SVGElementInstanceList({data});
+        });
+    }
+    */
 };
